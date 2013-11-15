@@ -33,11 +33,13 @@ def hot(request, template_name="timeline/timelines.html"):
     ctx['timelines'] = get_all_timlines().order_by('-num_views')
     return render(request, template_name, ctx)
 
+
 def last(request, template_name="timeline/timelines.html"):
     ctx = {}
     ctx['pg'] = 'last'
-    ctx['timelines'] = get_all_timlines().order_by('-updated_on')
+    #ctx['timelines'] = get_all_timlines().order_by('-updated_on')
     return render(request, template_name, ctx)
+
 
 def recommend(request, template_name="timeline/timelines.html"):
     ctx = {}

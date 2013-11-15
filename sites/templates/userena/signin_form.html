@@ -10,7 +10,7 @@
 {% block sidebar %}
   <div class="sidebar">
     <div style="padding-top: 20px;">
-      &gt; 还没有帐号？<a href="{% url userena_signup %}">立即注册</a>
+      &gt; 还没有帐号？<a href="{% url "userena_signup" %}">立即注册</a>
     </div>
   </div>
 {% endblock %}
@@ -32,7 +32,7 @@
             <input type="submit" value="{% trans "Signin" %}" class="btn btn-primary">
           </p>
           <p class="forgot-password">
-            <a href="{% url userena_password_reset %}" title="{% trans "Forgot your password?" %}">{% trans "Forgot your password?" %}</a>
+            <a href="{% url "userena_password_reset" %}" title="{% trans "Forgot your password?" %}">{% trans "Forgot your password?" %}</a>
           </p>
         </div>
       </fieldset>

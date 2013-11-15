@@ -14,15 +14,15 @@
 <div id="container_top">
   <div class="sw">
     {% if tl %}
-      <a href="{% url timeline_events tl.pk %}">编辑事件</a>
+      <a href="{% url "timeline_events" tl.pk %}">编辑事件</a>
       <span>|</span>
-      <a href="{% url timeline_attachs tl.pk %}">图片管理</a>
+      <a href="{% url "timeline_attachs" tl.pk %}">图片管理</a>
     {% endif %}
   </div>
   <ul class="sbreadcrumb">
-    <li><a href="{% url idx %}">首页</a> <span class="divider">/</span></li>
+    <li><a href="{% url "idx" %}">首页</a> <span class="divider">/</span></li>
     {% if tl %}
-      <li><a href="{% url timeline_detail tl.pk %}">{{ tl.title }}</a> <span class="divider">/</span></li>
+      <li><a href="{% url "timeline_detail" tl.pk %}">{{ tl.title }}</a> <span class="divider">/</span></li>
       <li class="active">编辑 {{tl}}</li>
     {% else %}
       <li class="active">创建时间线</li>
@@ -56,9 +56,9 @@
           <p>
             <button type="submit" class="btn btn-primary">提交</button>
             {% if tl %}
-              <a class="btn" href="{% url timeline_detail tl.pk %}">取消</a>
+              <a class="btn" href="{% url "timeline_detail" tl.pk %}">取消</a>
             {% else %}
-              <a class="btn" href="{% url idx %}">取消</a>
+              <a class="btn" href="{% url "idx" %}">取消</a>
             {% endif %}
           </p>
         </div>

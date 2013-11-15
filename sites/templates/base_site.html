@@ -27,31 +27,31 @@
             <input name="q" id="q" type="text" placeholder="Search" style="width: 160px">
           </form>
           <ul class="nav">
-            <li><a href="{% url timeline_recommend %}">推荐</a></li>
-            <li><a href="{% url timeline_hot %}">热门</a></li>
-            <li><a href="{% url timeline_last %}">最新</a></li>
-            <li><a href="{% url timeline_tags %}">标签云</a></li>
+            <li><a href="{% url "timeline_recommend" %}">推荐</a></li>
+            <li><a href="{% url "timeline_hot" %}">热门</a></li>
+            <li><a href="{% url "timeline_last" %}">最新</a></li>
+            <li><a href="{% url "timeline_tags" %}">标签云</a></li>
           </ul>
           <ul class="nav pull-right">
-            <li><a href="{% url timeline_new %}"><span>创建时间线</span></a></li>
+            <li><a href="{% url "timeline_new" %}"><span>创建时间线</span></a></li>
             {% if user.is_authenticated %}
-              <li><a href="{% url userena_profile_detail user.username %}#id_tls"><span>我的时间线</span></a></li>
+              <li><a href="{% url "userena_profile_detail" user.username %}#id_tls"><span>我的时间线</span></a></li>
               <li>
-                <a href="{% url userena_profile_detail user.username %}">
+                <a href="{% url "userena_profile_detail" user.username %}">
                   <span> {{ user.username }}的帐号 </span>
                 </a>
               </li>
-              <li><a href="{% url userena_umessages_list %}">
+              <li><a href="{% url "userena_umessages_list" %}">
                   {% get_unread_message_count_for user as unread_message_count %}
                   <span id="nav_msg" class="{% if unread_message_count %}have-new-msg{% endif %}">
                     消息({{unread_message_count}})
                   </span>
                 </a>
               </li>
-              <li><a href="{% url userena_signout %}"><span>退出</span></a></li>
+              <li><a href="{% url "userena_signout" %}"><span>退出</span></a></li>
             {% else %}
-              <li><a href="{% url userena_signin %}"><span>{% trans 'Signin' %}</span></a></li>
-              <li><a href="{% url userena_signup %}"><span>{% trans 'Signup' %}</span></a></li>
+              <li><a href="{% url "userena_signin" %}"><span>{% trans 'Signin' %}</span></a></li>
+              <li><a href="{% url "userena_signup" %}"><span>{% trans 'Signup' %}</span></a></li>
             {% endif %}
           </ul>
         </div>
@@ -97,9 +97,9 @@
           </a>
         </p>
         <p class="lks">
-          <a href="{% url timeline_about %}">关于</a>
+          <a href="{% url "timeline_about" %}">关于</a>
           <span>|</span>
-          <a href="{% url timeline_faq %}">FAQ</a>
+          <a href="{% url "timeline_faq" %}">FAQ</a>
           <span>|</span>
           <a href="http://haoluobo.com" target="_blank">博客</a>
         </p>

@@ -22,7 +22,12 @@ class Profile(UserenaBaseProfile):
                                               choices=GENDER_CHOICES,
                                               blank=True,
                                               null=True)
+    #django 1.3
+    '''
     website = models.URLField(_('website'), blank=True, verify_exists=True)
+    '''
+    #django 1.6
+    website = models.URLField(_('website'), blank=True)
     location =  models.CharField(_('location'), max_length=255, blank=True)
     birth_date = models.DateField(_('birth date'), blank=True, null=True)
     about_me = models.TextField(_('about me'), blank=True)
